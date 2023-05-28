@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scqqk page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initClock()">
+    <div class="time">
+        <span id="hour">00</span> : 
+        <span id="minutes">00</span> : 
+        <span id="seconds">00</span>
+        <span id="period">PM</span>
+    </div>
+    <h1 id="current-time"></h1>
+    <script>
+        Number.prototype.pad = function(digits){
+            for(var n = this.toString();n.length<digits;n=0+n);
+            return n;
+        }
+
+        var hour = document.getElementById("hour");
+        var minutes = document.getElementById("minutes");
+        var seconds = document.getElementById("seconds");
+        var periodtext = document.getElementById("period");
+
+        function updateClock(){
+            if (hour == 0){
+                hour = 12;
+            }
+            if(hour > 12){
+                hour = hour - 12;
+                period = "PM";
+            }else{
+                period = "AM";
+            }
+            var date = new Date();
+            hour.innerHTML = date.getHours().pad(2);
+            minutes.innerHTML = date.getMinutes().pad(2);
+            seconds.innerHTML = date.getSeconds().pad(2);
+            periodtext.innerHTML = period;
+        }
+        function initClock(){
+            updateClock();
+            window.setInterval("updateClock()",1);
+        }
+        
+    </script>
+</body>
+</html>
