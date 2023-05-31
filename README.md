@@ -1,1 +1,0 @@
-# scqqk.github.io
