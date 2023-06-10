@@ -1,0 +1,26 @@
+.footer{
+    text-align: center;
+    height:10vh;
+    width:100vw;
+    padding: 20px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.text{
+    color: black;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.text-bold{
+    color: black;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.icon{
+    position: relative;
+    top: 5px;
+    font-size: 20px;
+}
